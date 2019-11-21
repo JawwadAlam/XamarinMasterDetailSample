@@ -7,6 +7,7 @@ namespace MasterDetail.Models
     public enum MenuItemType
     {
         Browse,
+        GhibliFilms,
         About
     }
     public class HomeMenuItem

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MasterDetail.Views.GhibliFilms"
+             Title="Ghibli Films">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Ghibli Films!"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding Films}"
+                      HasUnevenRows="True"
+                      IsPullToRefreshEnabled="True"
+                      RefreshCommand="{Binding LoadFilmsCommand}"
+                      IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="5, 0, 5, 0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".5*"/>
+                                    <ColumnDefinition Width=".3*"/>
+                                    <ColumnDefinition Width=".2*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding title}" FontSize="Medium" TextColor="LightBlue" FontAttributes="Bold"></Label>
+                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding director}" FontSize="Small" TextColor="DarkGray"></Label>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding producer}" FontSize="Small"></Label>
+                                <Label Grid.Row="1" Grid.Column="2" Text="{Binding release_date}" FontSize="Micro" HorizontalTextAlignment="End"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

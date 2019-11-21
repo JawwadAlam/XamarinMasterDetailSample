@@ -33,6 +33,9 @@ namespace MasterDetail.Views
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
+                    case (int)MenuItemType.GhibliFilms:
+                        MenuPages.Add(id, new NavigationPage(new GhibliFilms()));
+                        break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;

@@ -21,6 +21,7 @@ namespace MasterDetail.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
+                new HomeMenuItem {Id = MenuItemType.GhibliFilms, Title="Ghibli Films"},
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };
 
