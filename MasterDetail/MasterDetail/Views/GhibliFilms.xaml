@@ -11,11 +11,13 @@
             <Label Text="Welcome to Ghibli Films!"
                 VerticalOptions="StartAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <ListView ItemsSource="{Binding Films}"
+            <ListView x:Name="GhibliFilmsList"
+                ItemsSource="{Binding Films}"
                       HasUnevenRows="True"
                       IsPullToRefreshEnabled="True"
                       RefreshCommand="{Binding LoadFilmsCommand}"
-                      IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+                      IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                      ItemSelected="OnFilmSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

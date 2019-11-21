@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MasterDetail.Views.GhibliFilmDetail" Title="{Binding Title}">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".4*"></ColumnDefinition>
+                <ColumnDefinition Width=".6*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Frame BackgroundColor="LightCoral" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="Rotten Tommato Score"></Label>
+                    <Label FontAttributes="Bold" Text="{Binding Film.rt_score}" VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+                
+            </Frame>
+            <Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Film.description}" VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <BoxView Grid.Row="2" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="Gray" > </BoxView>
+            <Label Grid.Row="3" Text="Producer"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+            <Label Grid.Row="3" Grid.Column="1" Text="{Binding Film.producer}" VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+            <Label Grid.Row="4" Text="Director"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+            <Label Grid.Row="4" Grid.Column="1" Text="{Binding Film.director}" VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+            <Label Grid.Row="5" Text="Released"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+            <Label Grid.Row="5" Grid.Column="1" Text="{Binding Film.release_date}" VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
